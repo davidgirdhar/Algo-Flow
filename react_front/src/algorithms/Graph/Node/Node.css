@@ -1,0 +1,205 @@
+:root {
+  --p-grid-cols: 1;
+  --p-grid-rows: 1;
+}
+
+.box {
+  padding: 0 px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0 0;
+  padding: 2px;
+  background-color: #fff;
+  grid-template-rows: repeat(var(--p-grid-rows), 1fr);
+  grid-template-columns: repeat(var(--p-grid-cols), 1fr);
+}
+
+.node {
+  padding-top: 107%;
+  background-color: #f3f3f3;
+}
+
+.node-start {
+  background-image: url('../svg/start.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: ease-in-out 200ms;
+}
+
+.node-finish {
+  background-image: url('../svg/end.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: ease-in-out 200ms;
+}
+
+.node-wall {
+  background-color: #212f3c;
+  transition: all 250ms;
+}
+.node-weight {
+  background-image: url('../svg/weight.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: ease-in-out 200ms;
+  transition: all 250ms;
+}
+
+.node-shortest-path-start {
+  background-image: url('../svg/start.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: ease-in-out 200ms;
+  background-color: rgb(255, 254, 106);
+}
+
+.node-shortest-path-finish {
+  background-image: url('../svg/end.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: ease-in-out 200ms;
+  background-color: rgb(255, 254, 106);
+}
+
+.node-shortest-path-weight {
+  animation-name: shortestPath1;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.node-shortest-path {
+  animation-name: shortestPath;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes shortestPath1 {
+  0% {
+    transform: scale(0.6);
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(255, 254, 106);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(255, 254, 106);
+  }
+
+  100% {
+    transform: scale(1);
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(255, 254, 106);
+  }
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(255, 254, 106);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(255, 254, 106);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(255, 254, 106);
+  }
+}
+
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.node-visited-weight {
+  animation-name: visitedAnimation1;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+
+@keyframes visitedAnimation1 {
+  0% {
+    transform: scale(0.3);
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+
+  50% {
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+
+  75% {
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-image: url('../svg/weight.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
